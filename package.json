@@ -6,8 +6,9 @@
   "dependencies": {
     "@material-ui/core": "^4.7.0",
     "@types/node": "^8.0.7",
-    "@types/react": "15.0.21",
+    "@types/react": "16.12.0",
     "@types/react-dom": "0.14.23",
+    "@types/react-helmet": "^5.0.14",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-react-helmet": "^1.0.8",
