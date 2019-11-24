@@ -3,11 +3,16 @@
   "description": "Mountain Moving Company",
   "version": "1.0.0",
   "author": "Jake Berg <jacobvictorberg@gmail.com>",
+  "engines": {
+    "node": "^10.16.3",
+    "yarn": "^1.19.1"
+  },
   "dependencies": {
     "@material-ui/core": "^4.7.0",
     "@types/node": "^8.0.7",
-    "@types/react": "15.0.21",
+    "@types/react": "^16.9.0",
     "@types/react-dom": "0.14.23",
+    "@types/react-helmet": "^5.0.14",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -24,7 +29,8 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "gatsby build"
   },
   "devDependencies": {
     "jest": "^24.9.0",
