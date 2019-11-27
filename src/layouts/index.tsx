@@ -1,15 +1,30 @@
 import * as React from "react";
 import Helmet from "react-helmet";
-import { AppBar, Toolbar, Typography, Link } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import styled from "styled-components";
 
 import "./index.css";
 import { makeStyles } from "@material-ui/styles";
 
-interface DefaultLayoutProps {}
+interface DefaultLayoutProps {
+  data: {
+    fileName: {
+      childImageSharp: {
+        fluid: {
+          src: string;
+        };
+      };
+    };
+  };
+}
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    borderBottom: `1px solid black`
+    boxShadow: `0px 0px 5px 6px #ccc;`,
+    borderBottom: "1px ",
+    height: "100px",
+    display: "flex",
+    justifyContent: "center"
   },
   toolbar: {
     flexWrap: "wrap"
@@ -22,8 +37,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Layout: React.FC<DefaultLayoutProps> = ({ children }) => {
+const Layout: React.FC<DefaultLayoutProps> = ({ children, data }) => {
   const classes = useStyles();
+  console.log("Layout", data);
   return (
     <div>
       <Helmet
@@ -40,6 +56,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children }) => {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
+          <Icon src={data.fileName.childImageSharp.fluid.src} />
           <Typography
             variant="h6"
             color="inherit"
@@ -49,21 +66,15 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children }) => {
             Mountain Moving Company
           </Typography>
           <nav>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Pricing
+            <Link href="#">
+              <CommonButton variant="contained" color="primary">
+                Pricing
+              </CommonButton>
             </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Contact
+            <Link href="#">
+              <CommonButton variant="contained" color="primary">
+                Contact
+              </CommonButton>
             </Link>
           </nav>
         </Toolbar>
@@ -81,5 +92,28 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children }) => {
     </div>
   );
 };
+
+const CommonButton = styled(Button)`
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 2px rgba(143, 180, 201, 0.3);
+  height: 48px;
+  padding: 0 30px;
+  text-decoration: none;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  margin: 0 5px;
+`;
+
+export const Icon = styled.div<{ src: string }>`
+  width: 100px;
+  height: 75px;
+  background-size: 100%;
+  ${({ src }: any) => `background-image: url(${src})`};
+  background-repeat: no-repeat;
+  margin-right: 10px;
+`;
 
 export default Layout;

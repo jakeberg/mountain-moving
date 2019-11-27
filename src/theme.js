@@ -32,7 +32,10 @@ module.exports = createMuiTheme({
     },
     MuiButton: {
       containedPrimary: {
-        "&:hover": {},
+        background: "#536975",
+        "&:hover": {
+          background: "#536975"
+        },
         [breakpoints.down("xs")]: {}
       },
       containedSecondary: {
@@ -40,7 +43,9 @@ module.exports = createMuiTheme({
       },
 
       root: {
-        "&:hover": {},
+        "&:hover": {
+          textDecoration: "none"
+        },
         "&:error": {}
       }
     }
@@ -58,6 +63,7 @@ module.exports = createMuiTheme({
     borderRadius: 4
   },
   typography: {
+    fontFamily: "Montserrat', sans-serif;",
     useNextVariants: true,
     h1: {},
     h2: {},

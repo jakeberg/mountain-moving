@@ -15,9 +15,9 @@ interface IndexPageProps {
 }
 
 const Homepage: React.FC<IndexPageProps> = props => {
-  console.log(props);
+  console.log("Homepage", props.data);
   return (
-    <Layout>
+    <Layout data={props.data}>
       <p>
         <strong>{props.data.site.siteMetadata.title}</strong> site.
       </p>
@@ -32,6 +32,13 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    fileName: file(relativePath: { eq: "icon.png" }) {
+      childImageSharp {
+        fluid(maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
