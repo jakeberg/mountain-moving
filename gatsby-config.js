@@ -14,6 +14,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
@@ -22,13 +23,12 @@ module.exports = {
       options: {
         name: `Mountain Moving Company`,
         short_name: `MMC`,
-        start_url: `/`,
-        icon: `src/images/icon.png`
+        start_url: `/${__dirname}`,
+        icon: `src/data/images/icon.png`
       }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,9 +39,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`
+        name: `data`,
+        path: `${__dirname}/src/data/`
       }
-    }
+    },
+    `gatsby-plugin-lodash`
   ]
 };

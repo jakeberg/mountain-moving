@@ -2,12 +2,13 @@ import * as React from "react";
 import Helmet from "react-helmet";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import styled from "styled-components";
+import get from "lodash/get";
 
 import "./index.css";
 import { makeStyles } from "@material-ui/styles";
 
 interface DefaultLayoutProps {
-  data: {
+  content: {
     fileName: {
       childImageSharp: {
         fluid: {
@@ -37,9 +38,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Layout: React.FC<DefaultLayoutProps> = ({ children, data }) => {
+const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
   const classes = useStyles();
-  console.log("Layout", data);
+  const fileName = get(content, "fileName.childImageSharp.fluid.src", "");
   return (
     <div>
       <Helmet
@@ -56,7 +57,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, data }) => {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          <Icon src={data.fileName.childImageSharp.fluid.src} />
+          <Icon src={fileName} />
           <Typography
             variant="h6"
             color="inherit"

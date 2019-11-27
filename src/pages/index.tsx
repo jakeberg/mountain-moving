@@ -11,13 +11,20 @@ interface IndexPageProps {
         title: string;
       };
     };
+    fileName: {
+      childImageSharp: {
+        fluid: {
+          src: string;
+        };
+      };
+    };
   };
 }
 
 const Homepage: React.FC<IndexPageProps> = props => {
   console.log("Homepage", props.data);
   return (
-    <Layout data={props.data}>
+    <Layout content={props.data}>
       <p>
         <strong>{props.data.site.siteMetadata.title}</strong> site.
       </p>
@@ -34,7 +41,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    fileName: file(relativePath: { eq: "icon.png" }) {
+    fileName: file(relativePath: { eq: "images/icon.png" }) {
       childImageSharp {
         fluid(maxHeight: 250) {
           ...GatsbyImageSharpFluid
