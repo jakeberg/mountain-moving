@@ -15,7 +15,7 @@ const Content = ({}: ContentProps) => {
       </Body>
       <a href={"asdf"} style={{ textDecoration: "none" }}>
         <StyledButton variant="contained" color="secondary">
-          Read More
+          See prices
         </StyledButton>
       </a>
     </Container>
