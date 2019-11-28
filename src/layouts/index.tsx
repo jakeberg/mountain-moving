@@ -78,7 +78,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
             >
               Mountain Moving Company
             </Typography>
-            <nav>
+            <Nav>
               <Link href="#">
                 <CommonButton variant="contained" color="primary">
                   Pricing
@@ -89,7 +89,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
                   Contact
                 </CommonButton>
               </Link>
-            </nav>
+            </Nav>
           </Toolbar>
         </AppBar>
         <div
@@ -110,6 +110,12 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
 const Link = styled.a`
   text-decoration: none;
   margin: 0 5px;
+`;
+
+const Nav = styled.nav`
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: none;
+  }
 `;
 
 export const Icon = styled.div<{ src: string }>`
