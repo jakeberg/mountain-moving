@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 interface HeroProps {
@@ -10,7 +10,7 @@ interface HeroProps {
 const Hero = ({ content }: HeroProps) => {
   return (
     <Container container justify="space-between" direction={"row"}>
-      <h1>Hero</h1>
+      <Typography variant="h1">Hero</Typography>
     </Container>
   );
 };

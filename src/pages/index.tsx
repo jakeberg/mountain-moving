@@ -3,6 +3,7 @@ import get from "lodash/get";
 import Layout from "../layouts";
 import Resource from "../components/resource";
 import { Container } from "@material-ui/core";
+import Hero from "../components/hero";
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -29,6 +30,7 @@ const Homepage: React.FC<IndexPageProps> = props => {
   const fileName = get(props.data, "fileName.childImageSharp.fluid.src", "");
   return (
     <Layout content={props.data}>
+      <Hero content={{}} />
       <Container>
         <p>
           Mountain Moving Company is an independent moving company with friendly

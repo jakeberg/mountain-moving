@@ -1,13 +1,15 @@
 import * as React from "react";
 import Helmet from "react-helmet";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import get from "lodash/get";
 import { ThemeProvider as SCThemeProvider } from "styled-components";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../theme";
 
-import "./index.css";
 import { makeStyles } from "@material-ui/styles";
+import { CommonButton } from "../components/common-button";
 
 interface DefaultLayoutProps {
   content: {
@@ -27,7 +29,8 @@ const useStyles = makeStyles(theme => ({
     borderBottom: "1px ",
     height: "100px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom: "20px"
   },
   toolbar: {
     flexWrap: "wrap"
@@ -45,14 +48,20 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
   const fileName = get(content, "fileName.childImageSharp.fluid.src", "");
   return (
     <SCThemeProvider theme={theme}>
-      <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Helmet
           title="Mountain Moving Company"
           meta={[
             { name: "description", content: "Sample" },
             { name: "keywords", content: "sample, something" }
           ]}
-        />
+        >
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          ></link>
+        </Helmet>
         <AppBar
           position="static"
           color="default"
@@ -93,20 +102,10 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
         >
           {children}
         </div>
-      </>
+      </ThemeProvider>
     </SCThemeProvider>
   );
 };
-
-const CommonButton = styled(Button)`
-  border: 0;
-  border-radius: 3px;
-  box-shadow: 0 3px 5px 2px rgba(143, 180, 201, 0.3);
-  height: 48px;
-  padding: 0 30px;
-  text-decoration: none;
-  background-color: #536975;
-`;
 
 const Link = styled.a`
   text-decoration: none;

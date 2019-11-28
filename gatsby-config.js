@@ -5,19 +5,6 @@ module.exports = {
     title: `Mountain Moving Company`
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        theme,
-        stylesProvider: {
-          injectFirst: true
-        }
-      }
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {}
-    },
     `gatsby-plugin-react-helmet`,
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
@@ -46,6 +33,16 @@ module.exports = {
         path: `${__dirname}/src/data/`
       }
     },
-    `gatsby-plugin-lodash`
+    `gatsby-plugin-lodash`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        theme,
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
+    `gatsby-plugin-styled-components`
   ]
 };

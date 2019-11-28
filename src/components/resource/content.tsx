@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography, Button, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { CommonButton } from "../common-button";
 
 interface ContentProps {}
 
@@ -14,9 +15,9 @@ const Content = ({}: ContentProps) => {
         }
       </Body>
       <a href={"asdf"} style={{ textDecoration: "none" }}>
-        <StyledButton variant="contained" color="secondary">
+        <Button variant="contained" color="secondary">
           See prices
-        </StyledButton>
+        </Button>
       </a>
     </Container>
   );
@@ -54,7 +55,7 @@ const Body = styled(Typography)`
   }
 `;
 
-const StyledButton = styled(Button)`
+const Button = styled(CommonButton)`
   padding: 0.35rem 1.75rem;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
