@@ -47,9 +47,9 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
   const classes = useStyles();
   const fileName = get(content, "fileName.childImageSharp.fluid.src", "");
   return (
-    <SCThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <SCThemeProvider theme={theme}>
         <Helmet
           title="Mountain Moving Company"
           meta={[
@@ -102,8 +102,8 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
         >
           {children}
         </div>
-      </ThemeProvider>
-    </SCThemeProvider>
+      </SCThemeProvider>
+    </ThemeProvider>
   );
 };
 

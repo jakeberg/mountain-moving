@@ -7,7 +7,7 @@ interface ContentProps {}
 
 const Content = ({}: ContentProps) => {
   return (
-    <Container>
+    <Grid>
       <Heading variant="h4">{"Header content"}</Heading>
       <Body variant="h5">
         {
@@ -19,18 +19,13 @@ const Content = ({}: ContentProps) => {
           See prices
         </Button>
       </a>
-    </Container>
+    </Grid>
   );
 };
-
-const Container = styled(Grid)`
-  padding: 0 2.8rem 0 0;
-`;
 
 const Heading = styled(Typography)`
   font-size: 1.75rem;
   line-height: 2.81rem;
-  font-family: Merriweather;
   font-weight: 500;
   color: #000;
 

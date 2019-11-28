@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Paper } from "@material-ui/core";
 import styled from "styled-components";
 
 interface HeroProps {
@@ -9,14 +8,23 @@ interface HeroProps {
 
 const Hero = ({ content }: HeroProps) => {
   return (
-    <Container container justify="space-between" direction={"row"}>
-      <Typography variant="h1">Hero</Typography>
+    <Container container direction={"column"}>
+      <PaperWrapper>
+        <Typography variant="h3">Professional Movers, on a Budget!</Typography>
+        <Typography variant="body1">
+          Mountain Moving Company is an independent moving company with friendly
+          employees that pride ourselves on providing quality services to each
+          of our clients.
+        </Typography>
+      </PaperWrapper>
     </Container>
   );
 };
 
-const Container = styled(Grid)`
-  padding: "10px";
+const Container = styled(Grid)``;
+
+const PaperWrapper = styled(Paper)`
+  padding: 20px;
 `;
 
 export default Hero;
