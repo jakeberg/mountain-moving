@@ -1,0 +1,77 @@
+{
+  "appBar": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "about": {
+    "one": "Mountain Moving Company is an independent moving company with friendly employees that pride ourselves on providing quality services to each of our clients.",
+    "two": "With 5 years in the moving industry, our professional team will be glad to help with your relocation."
+  },
+  "testimonials": {
+    "jake_hamilton": "This was perfect for moving on a budget while still wanting to protect and properly move all of my things. The movers were very knowledgable, efficient, and professional. All of my stuff made it safely back, Indiana to Texas -- over a 900 mile drive. No damage and no shifting! -Jake Hamilton",
+    "andrea_snyder": "This is an excellent company to do business with. They were timely and honest! They did a great job moving me from Indianapolis to Zionsville. I almost forgot to mention, they properly communicate every step of the way."
+  },
+  "info": {
+    "one": "We are a great choice for small and large moves.",
+    "two": "South-Central Indiana based.",
+    "three": "Serving Bloomington, Nashville, Columbus, and Indianapolis -- as well as some surrounding areas."
+  },
+  "pricing": {
+    "heading": "Our experienced team of Mountain Movers will arrive on your selected move date to safely move your household items to your new home. Our knowledgeable movers use proper communication and know-how to efficiently load your items onto our trailer. Using professional grade moving pads and straps, our team will ensure minimal shifting and smooth transition from start to finish.",
+    "service": {
+      "heading": "Where we service:",
+      "areas": "Bloomington, Nashville, Columbus, and Indianapolis -- as well as some surrounding areas."
+    },
+    "rates": {
+      "heading": "Rates",
+      "travel": {
+        "heading": "TRAVEL FEE:",
+        "subheading": "(for fuel and maintenance, overall)",
+        "rates": ["Columbus: $30", "Bloomington: $50", "Indianapolis: $50"]
+      },
+      "labor": {
+        "heading": "LABOR CHARGES:",
+        "subheading": "(1 hr. Minimum, 15 min charges thereafter)",
+        "rates": ["2 Movers- $60/ hr.", "Additional movers- $30/ hr"]
+      },
+      "localRates": {
+        "heading": "LOCAL MOVE(<15 miles):",
+        "subheading": "Local moves are priced according to a varied travel fee + accumulated labor charges*",
+        "rates": ["*details described above"]
+      },
+      "longDistance": {
+        "heading": "LONG DISTANCE MOVE(>15 miles):",
+        "subheading": "Travel fee + labor charges apply for load and unload times. The distance of move commute, between the load and unload, is charged per mile for long distance moves.",
+        "rates": ["(Mileage charge: $2.00 per mile)"]
+      },
+      "packing": {
+        "heading": "PACKING CHARGE:",
+        "subheading": "Our packing professionals will arrive at a scheduled time, ahead of your move date, to pack fragile items into boxes and wrap selected furniture items in protective padding. We box fragile items in containers (either provided by you, or purchased from us), using packing paper, foam padding, and other necessary materials. We also protect fragile furniture items using padding and shrink wrap to insure the safety of each item moved.",
+        "rates": [
+          "2 Packers- $60/ hr. + cost of materials",
+          "-Additional packers- $30/ hr."
+        ]
+      },
+      "equipment": {
+        "heading": "Equipment",
+        "items": [
+          "Full-sized pickup, a new 6x12 enclosed trailer, professional grade moving pads"
+        ]
+      }
+    },
+    "contact": {
+      "heading": "Contact",
+      "phone": {
+        "heading": "Phone:",
+        "phoneNumber": "812-371-3077"
+      },
+      "email": {
+        "heading": "Email:",
+        "phoneNumber": "hire.mountain.movers@gmail.com"
+      },
+      "timeToTalk": "Schedule a time to talk:",
+      "emailButton": "Send email"
+    }
+  }
+}
