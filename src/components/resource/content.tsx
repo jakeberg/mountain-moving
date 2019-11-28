@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography, Button, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { CommonButton } from "../common-button";
 
 interface ContentProps {}
 
 const Content = ({}: ContentProps) => {
   return (
-    <Container>
+    <Grid>
       <Heading variant="h4">{"Header content"}</Heading>
       <Body variant="h5">
         {
@@ -14,22 +15,17 @@ const Content = ({}: ContentProps) => {
         }
       </Body>
       <a href={"asdf"} style={{ textDecoration: "none" }}>
-        <StyledButton variant="contained" color="secondary">
-          Read More
-        </StyledButton>
+        <Button variant="contained" color="secondary">
+          See prices
+        </Button>
       </a>
-    </Container>
+    </Grid>
   );
 };
-
-const Container = styled(Grid)`
-  padding: 0 2.8rem 0 0;
-`;
 
 const Heading = styled(Typography)`
   font-size: 1.75rem;
   line-height: 2.81rem;
-  font-family: Merriweather;
   font-weight: 500;
   color: #000;
 
@@ -54,7 +50,7 @@ const Body = styled(Typography)`
   }
 `;
 
-const StyledButton = styled(Button)`
+const Button = styled(CommonButton)`
   padding: 0.35rem 1.75rem;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {

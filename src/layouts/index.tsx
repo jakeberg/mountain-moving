@@ -1,13 +1,15 @@
 import * as React from "react";
 import Helmet from "react-helmet";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import get from "lodash/get";
 import { ThemeProvider as SCThemeProvider } from "styled-components";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../theme";
 
-import "./index.css";
 import { makeStyles } from "@material-ui/styles";
+import { CommonButton } from "../components/common-button";
 
 interface DefaultLayoutProps {
   content: {
@@ -27,7 +29,8 @@ const useStyles = makeStyles(theme => ({
     borderBottom: "1px ",
     height: "100px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom: "20px"
   },
   toolbar: {
     flexWrap: "wrap"
@@ -44,15 +47,21 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
   const classes = useStyles();
   const fileName = get(content, "fileName.childImageSharp.fluid.src", "");
   return (
-    <SCThemeProvider theme={theme}>
-      <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <SCThemeProvider theme={theme}>
         <Helmet
           title="Mountain Moving Company"
           meta={[
             { name: "description", content: "Sample" },
             { name: "keywords", content: "sample, something" }
           ]}
-        />
+        >
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          ></link>
+        </Helmet>
         <AppBar
           position="static"
           color="default"
@@ -69,7 +78,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
             >
               Mountain Moving Company
             </Typography>
-            <nav>
+            <Nav>
               <Link href="#">
                 <CommonButton variant="contained" color="primary">
                   Pricing
@@ -80,7 +89,7 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
                   Contact
                 </CommonButton>
               </Link>
-            </nav>
+            </Nav>
           </Toolbar>
         </AppBar>
         <div
@@ -93,24 +102,20 @@ const Layout: React.FC<DefaultLayoutProps> = ({ children, content }) => {
         >
           {children}
         </div>
-      </>
-    </SCThemeProvider>
+      </SCThemeProvider>
+    </ThemeProvider>
   );
 };
-
-const CommonButton = styled(Button)`
-  border: 0;
-  border-radius: 3px;
-  box-shadow: 0 3px 5px 2px rgba(143, 180, 201, 0.3);
-  height: 48px;
-  padding: 0 30px;
-  text-decoration: none;
-  background-color: #536975;
-`;
 
 const Link = styled.a`
   text-decoration: none;
   margin: 0 5px;
+`;
+
+const Nav = styled.nav`
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: none;
+  }
 `;
 
 export const Icon = styled.div<{ src: string }>`

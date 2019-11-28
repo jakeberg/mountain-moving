@@ -32,10 +32,6 @@ module.exports = createMuiTheme({
     },
     MuiButton: {
       containedPrimary: {
-        background: "#536975",
-        "&:hover": {
-          background: "#536975"
-        },
         [breakpoints.down("xs")]: {}
       },
       containedSecondary: {
@@ -51,8 +47,8 @@ module.exports = createMuiTheme({
     }
   },
   palette: {
-    primary: { main: "#000000" },
-    secondary: { main: "#000000" },
+    primary: { main: "#536975" },
+    secondary: { main: "#8aaec2" },
     grey: { 500: "#000000" },
     text: {
       primary: "#000000",
@@ -63,18 +59,7 @@ module.exports = createMuiTheme({
     borderRadius: 4
   },
   typography: {
-    fontFamily: "Montserrat', sans-serif;",
-    useNextVariants: true,
-    h1: {},
-    h2: {},
-    h3: {},
-    h4: {},
-    h5: {},
-    h6: {},
-    subtitle1: {},
-    subtitle2: {},
-    body1: {},
-    body2: {}
+    fontFamily: ["Montserrat", "sans-serif"]
   },
   fontweight: {
     light: 200,
