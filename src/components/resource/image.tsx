@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 interface ImageProps {
-  filename: string;
+  fileName: string;
 }
 
 const Image = ({ fileName }: ImageProps) => {
-  return <StyledImage src={require(`../../images/${fileName}`)} />;
+  return <StyledImage src={fileName} />;
 };
 
 const StyledImage = styled.img`

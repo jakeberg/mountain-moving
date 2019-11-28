@@ -5,15 +5,16 @@ import styled from "styled-components";
 import Content from "./content";
 
 interface ResourceProps {
-  content: any;
+  content: { fileName: string };
 }
+
 const Resource = ({ content }: ResourceProps) => {
   return (
     <Container container justify="space-between" direction={"row"}>
-      <Grid item md={6} sm={12}>
-        <Image />
+      <Grid item md={4} sm={12}>
+        <Image fileName={content.fileName} />
       </Grid>
-      <Grid item md={6} sm={12} container alignItems="center">
+      <Grid item md={8} sm={12} container alignItems="center">
         <Content />
       </Grid>
     </Container>

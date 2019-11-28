@@ -7,8 +7,12 @@ interface ContentProps {}
 const Content = ({}: ContentProps) => {
   return (
     <Container>
-      <Heading variant="h4">{"asdf"}</Heading>
-      <Body variant="h5">{"Asdf"}</Body>
+      <Heading variant="h4">{"Header content"}</Heading>
+      <Body variant="h5">
+        {
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, itaque quis delectus ea pariatur voluptas enim odio. Mollitia, harum illo magnam quisquam doloribus ad facere illum consequatur veritatis tenetur, ut fugit sed at dolorem accusamus facilis cupiditate, corrupti quae. Excepturi magni inventore corrupti incidunt saepe aut quas consequuntur nihil exercitationem?"
+        }
+      </Body>
       <a href={"asdf"} style={{ textDecoration: "none" }}>
         <StyledButton variant="contained" color="secondary">
           Read More
